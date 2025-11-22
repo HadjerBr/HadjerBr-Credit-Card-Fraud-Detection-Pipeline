@@ -11,7 +11,7 @@ import matplotlib.pyplot as plt
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
-from src.preprocess import load_data, train_test_split_and_balance
+from src.preprocess import load_data
 from src.model_utils import train_and_evaluate
 
 
@@ -27,12 +27,10 @@ st.write(
 
 @st.cache_resource
 def get_data():
-    df, amount_mean, amount_std = load_data("creditcard.csv")
-    X_train, y_train, X_test, y_test, feature_names = train_test_split_and_balance(df)
-    return X_train, y_train, X_test, y_test, feature_names
+    X_train, y_train, X_test, y_test = load_data("notebook/preprocessed_data.npz")
+    return X_train, y_train, X_test, y_test
 
-
-X_train, y_train, X_test, y_test, feature_names = get_data()
+X_train, y_train, X_test, y_test = get_data()
 
 # Sidebar: Hyperparameters 
 st.sidebar.header("Hiperparametre Seçimi")

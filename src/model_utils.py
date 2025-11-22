@@ -13,13 +13,7 @@ def train_and_evaluate(X_train,
                        learning_rate: float,
                        iterations: int,
                        threshold: float):
-    """
-    EXACT reproduction of notebook evaluation:
-    - Train model
-    - Predict with threshold
-    - Manual Accuracy, Precision, Recall, F1
-    - ROC-AUC identical to notebook
-    """
+   
 
     model = LogisticRegressionFromScratch(
         learning_rate=learning_rate,

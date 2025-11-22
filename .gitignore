@@ -217,3 +217,4 @@ __marimo__/
 data/
 notebook/*.csv
 
+!data/preprocessed_data.npz
